@@ -4,7 +4,7 @@ import 'bootstrap'
 import NavBar from './NavBar';
 import './App.css';
 import GameList from './Components/Pages/Games';
-import GameDropdown from './Components/Pages/GameDropdown';
+import GameDropdown from './Components/GameDropdown';
 
 function App() {
   const users = []; // Replace with your actual users data
