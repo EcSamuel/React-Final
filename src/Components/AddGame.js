@@ -43,7 +43,7 @@ function AddGame() {
 
   return (
     <div>
-      <h2>Add New User</h2>
+      <h2>Don't See The Game You Play? Add It Here</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Game Title:</label>
