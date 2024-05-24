@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import './App.css';
 import GameList from './Components/Pages/Games';
 import GameDropdown from './Components/GameDropdown';
+import AddGame from './Components/AddGame';
 
 function App() {
   const users = []; // Replace with your actual users data
