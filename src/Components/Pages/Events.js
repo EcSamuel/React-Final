@@ -1,0 +1,26 @@
+import React from 'react'
+import EventCard from '../Events/EventCard';
+import UpdateEvent from '../Events/UpdateEvent';
+import DeleteEvent from '../Events/DeleteEvent';
+import CreateEvent from '../Events/CreateEvent';
+import EventsList from '../Events/EventsList';
+import FilterEventByDate from '../Events/FilterEventByDate';
+import FilterEventByGame from '../Events/FilterEventByGame';
+import ShowLocalEvents from '../Events/ShowLocalEvents';
+
+function Events() {
+  return (
+    <div>
+        The Goal of Events is to display user made events that reference games within other API's.
+
+        I know I will need to run the following functions:
+        <CreateEvent/>
+        <EventsList/>
+        <FilterEventByGame/>
+        <FilterEventByDate/>
+        <ShowLocalEvents/>
+    </div>
+  )
+}
+
+export default Events

@@ -33,6 +33,9 @@ function AddGame() {
       const response = await axios.post(gameURL, newGame);
       console.log(`You have successfully added ${newGame.title}`);
       console.log(response.data);
+      setTitle('');
+      setMaxPlayers('');
+      setGameInfo('');
     } catch (error) {
       console.error('Error Adding Connection', error);
     }
@@ -63,7 +66,7 @@ function AddGame() {
         <div>
           <label>Game Description</label>
           <input
-            type="text"
+            type="textarea"
             value={gameInfo}
             onChange={(e) => setGameInfo(e.target.value)}
             required

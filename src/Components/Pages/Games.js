@@ -6,8 +6,9 @@ import AddGame from '../AddGame';
 const GameList = () => {
     return (
         <>
-            <GameDropdown/>
             <AddGame/>
+            <GameDropdown/>
+          
         </>
     )
 

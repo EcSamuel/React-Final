@@ -6,6 +6,13 @@ import './App.css';
 import GameList from './Components/Pages/Games';
 import GameDropdown from './Components/GameDropdown';
 import AddGame from './Components/AddGame';
+import Events from './Components/Pages/Events';
+import CreateEvent from './Components/Events/CreateEvent';
+import EventsList from './Components/Events/EventsList';
+import FilterEventByGame from './Components/Events/FilterEventByGame';
+import FilterEventByDate from './Components/Events/FilterEventByDate';
+import ShowLocalEvents from './Components/Events/ShowLocalEvents';
+import EventCard from './Components/Events/EventCard';
 
 function App() {
   const users = []; // Replace with your actual users data
@@ -20,7 +27,7 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/events">Events</Link>
             </li>
             <li>
               <Link to="/games">Games</Link>
@@ -29,7 +36,7 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/users" element={<Users users={users} />} />
+          <Route path="/events" element={<EventsPage />} /> {/*issue on this line that might come up- I had to delete the props passed in to stop it from baby raging at me*/}
           <Route path="/games" element={<Games games={games} />} />
           <Route path="/" element={<HomePage />} />
         </Routes>
@@ -42,11 +49,11 @@ function HomePage() {
   return <h2>Welcome, User! Please Select a Menu</h2>;
 }
 
-function Users({ users }) {
+function EventsPage({ events }) {
   return (
     <div>
-      <h2>Users</h2>
-      {/* Render users data here */}
+      <h2>Events</h2>
+      <Events/>
     </div>
   );
 }
