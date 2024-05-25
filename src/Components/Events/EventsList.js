@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Button, Card, Container, Row, Col } from 'react-bootstrap';
+import UpdateEvent from './UpdateEvent';
 import axios from 'axios';
+import DeleteEvent from './DeleteEvent';
 
 function EventsList() {
   const eventURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Event`;
@@ -32,20 +35,30 @@ function EventsList() {
   }
 
   return (
-    <div>
-      {events.map((event) => (
-        <div key={event.id}>
-          <h2>Name: {event.eventName}</h2>
-          <div>Location: {event.location}</div>
-          <div>Begins At: {event.time}</div>
-          <div>Game Id: {event.gameId}</div>
-          <div>Event Full? {event.isFilled ? "Yes" : "No"}</div>
-        </div>
-      ))}
-
-      {/* Eventually going to make a loop or map to display all of these: I know the call will show up correctly but for the moment I need to get the API data to list first.
-        <EventCard/> */}
-    </div>
+    <>
+      <>
+        <Container className="d-flex">
+          <Row className="justify-content-center"> {/* Center the row horizontally */}
+            {events.map((event) => (
+              <Col key={event.id} sm={12} md={6} lg={4} className="mb-3"> {/* Add margin for spacing */}
+                <Card border="primary" style={{ width: '20vw'}}> {/* Set dark green border */}
+                  <Card.Body>
+                    <Card.Title>{event.eventName}</Card.Title>
+                    <Card.Text>Location: {event.location}</Card.Text>
+                    <Card.Text>Date: {event.date}</Card.Text>
+                    <Card.Text>Begins At: {event.time}</Card.Text>
+                    <Card.Text>Game Id: {event.gameId}</Card.Text>
+                    <Card.Text>Event Full? {event.isFilled ? "Yes" : "No"}</Card.Text>
+                    <UpdateEvent event={event}/>
+                    <DeleteEvent/>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </>
+    </>
   );
 }
 

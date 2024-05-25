@@ -5,9 +5,7 @@ import DeleteEvent from './DeleteEvent';
 function EventCard() {
   return (
     <div>
-      This is an Example Event
-      <UpdateEvent/>
-      <DeleteEvent/>
+      Do I even need an event Card for how I've written the code?
     </div>
   )
 }
