@@ -19,8 +19,9 @@ const GameDropdown = () => {
     };
     grabGames();
   }, []);
-
-  const handleSelect = (game) => {
+// it is not getting to the games here -rename to more accurately represent what is being sent in
+  const handleSelect = (gameAsString) => {
+    const game = JSON.parse(gameAsString)
     setSelectedGame(game);
     console.log(`you have selected ${game.title}`)
     setShow(false); // Close the dropdown after selection
@@ -31,7 +32,7 @@ const GameDropdown = () => {
   };
 
   return (
-    // Present suspicion is that the games.map bit doesn't work. I currently believe the reason is because I need a middle man but am uncertain. Hoping to ask Mike or a Mentor.
+    // Present suspicion is that the games.map bit doesn't work. I currently believe the reason is because I need a middle man but am uncertain. Hoping to ask Mike or a Mentor. dig into eventKey!!! Look up id specifically
     <>
       <div>How Do You Play?</div>
       <DropdownButton
@@ -42,7 +43,7 @@ const GameDropdown = () => {
         onSelect={handleSelect}
       >
         {games.map((game) => (
-          <Dropdown.Item key={game.id} eventKey={game.id}>
+          <Dropdown.Item key={game.id} eventKey={JSON.stringify(game)}>
             {game.title}
           </Dropdown.Item>
         ))}

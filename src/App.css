@@ -19,3 +19,7 @@ nav {
     color: #fff;
     text-decoration: none;
   }
+
+.main-content {
+  margin-top: 56px; /* Adjust the value based on the height of your NavBar */
+}

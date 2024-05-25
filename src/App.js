@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, Form, FormControl, Button, Dropdown, Card, CardDeck, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './NavBar';
 import './App.css';
 import GameList from './Components/Pages/Games';
 import GameDropdown from './Components/GameDropdown';
@@ -21,25 +20,29 @@ function App() {
   return (
     <div>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/events">Events</Link>
-            </li>
-            <li>
-              <Link to="/games">Games</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Routes>
-          <Route path="/events" element={<EventsPage />} /> {/*issue on this line that might come up- I had to delete the props passed in to stop it from baby raging at me*/}
-          <Route path="/games" element={<Games games={games} />} />
-          <Route path="/" element={<HomePage />} />
-        </Routes>
+        <Navbar bg="dark" expand="lg" fixed="top">
+          <Container className="justify-content-center">
+            <Navbar.Brand style={{color: 'blue'}} href="#home">Rule Zer0 Game Finder</Navbar.Brand>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/events">Events</Link>
+                </li>
+                <li>
+                  <Link to="/games">Games</Link>
+                </li>
+              </ul>
+          </Container>
+        </Navbar>
+        <div className='main-content'>
+          <Routes>
+            <Route path="/events" element={<EventsPage />} /> {/*issue on this line that might come up- I had to delete the props passed in to stop it from baby raging at me*/}
+            <Route path="/games" element={<Games games={games} />} />
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );
