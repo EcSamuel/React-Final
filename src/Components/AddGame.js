@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Form, FormControl } from 'react-bootstrap';
 import axios from 'axios';
 
 function AddGame() {

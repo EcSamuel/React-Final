@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Form, FormControl } from 'react-bootstrap';
 import axios from 'axios';
 
 function CreateEvent() {
@@ -60,7 +60,7 @@ function CreateEvent() {
   return (
     <div className="container">
       <h2>Add New Event</h2>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <div>
           <label>Event Name:</label>
           <input
@@ -107,7 +107,7 @@ function CreateEvent() {
           />
         </div>
         <Button type="submit">Add Your Event</Button>
-      </form>
+      </Form>
     </div>
   );
 }
