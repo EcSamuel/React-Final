@@ -50,7 +50,7 @@ function EventsList() {
                     <Card.Text>Game Id: {event.gameId}</Card.Text>
                     <Card.Text>Event Full? {event.isFilled ? "Yes" : "No"}</Card.Text>
                     <UpdateEvent event={event}/>
-                    <DeleteEvent/>
+                    <DeleteEvent event={event}/>
                   </Card.Body>
                 </Card>
               </Col>

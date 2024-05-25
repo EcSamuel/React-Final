@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Card, Container, Row, Col } from 'react-bootstrap';
 import EventCard from '../Events/EventCard';
 import UpdateEvent from '../Events/UpdateEvent';
 import DeleteEvent from '../Events/DeleteEvent';
@@ -10,7 +11,7 @@ import ShowLocalEvents from '../Events/ShowLocalEvents';
 
 function Events() {
   return (
-    <div>
+    <div className='container justtify-content-center'>
         The Goal of Events is to display user made events that reference games within other API's.
 
         I know I will need to run the following functions:

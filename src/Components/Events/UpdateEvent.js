@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import axios from 'axios';
 
 function UpdateEvent({ event }) {
@@ -41,7 +42,7 @@ function UpdateEvent({ event }) {
             value={gameId}
             onChange={(e) => setGameId(e.target.value)}
           />
-          <button type="submit">Change Your Game</button>
+          <Button variant="secondary" type="submit">Change Your Game</Button>
         </form>
         <form onSubmit={updateEventDetails}>
           <input
@@ -60,7 +61,7 @@ function UpdateEvent({ event }) {
             value={time}
             onChange={(e) => setTime(e.target.value)}
           />
-          <button type="submit">Change Your Event Details</button>
+          <Button variant="secondary" type="submit">Change Your Event Details</Button>
         </form>
       </div>
     </>

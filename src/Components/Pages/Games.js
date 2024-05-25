@@ -7,6 +7,9 @@ const GameList = () => {
     return (
         <>
             <AddGame/>
+
+            Currently Supported Games
+
             <GameDropdown/>
           
         </>

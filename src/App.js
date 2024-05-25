@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, Form, FormControl, Button, Dropdown, Card, CardDeck } from 'react-bootstrap';
-import 'bootstrap'
+import { Navbar, Nav, Form, FormControl, Button, Dropdown, Card, CardDeck, Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './NavBar';
 import './App.css';
 import GameList from './Components/Pages/Games';
@@ -51,7 +51,7 @@ function HomePage() {
 
 function EventsPage({ events }) {
   return (
-    <div>
+    <div className='d-flex justify-content-center'>
       <h2>Events</h2>
       <Events/>
     </div>
@@ -60,7 +60,7 @@ function EventsPage({ events }) {
 
 function Games({ games }) {
   return (
-    <div>
+    <div className='d-flex justify-content-center'>
       <h2>Games</h2>
       <GameList/>
     </div>

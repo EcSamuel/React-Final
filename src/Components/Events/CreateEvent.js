@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
 import axios from 'axios';
 
 function CreateEvent() {
@@ -57,7 +58,7 @@ function CreateEvent() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Add New Event</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -105,7 +106,7 @@ function CreateEvent() {
             required
           />
         </div>
-        <button type="submit">Add Your Event</button>
+        <Button type="submit">Add Your Event</Button>
       </form>
     </div>
   );
