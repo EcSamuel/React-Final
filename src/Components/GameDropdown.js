@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { Dropdown, DropdownButton, Container, Button } from "react-bootstrap";
 import axios from "axios";
 
 const GameDropdown = () => {
@@ -36,7 +36,7 @@ const GameDropdown = () => {
       <div>How Do You Play?</div>
       <DropdownButton
         id="dropdown-basic-button"
-        title={selectedGame ? selectedGame.title : "Select a game"}
+        title={"Select a game"}
         show={show}
         onToggle={toggleDropdown}
         onSelect={handleSelect}

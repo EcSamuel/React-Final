@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
 import axios from 'axios';
 
 function AddGame() {
@@ -72,7 +73,7 @@ function AddGame() {
             required
           />
         </div>
-        <button type="submit">Add Your Game</button>
+        <Button variant="info" type="submit">Add Your Game</Button>
       </form>
     </div>
   );
