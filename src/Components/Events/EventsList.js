@@ -51,6 +51,12 @@ function EventsList() {
     }
   };
 
+  const handleFilterGames = (filteredData) => {
+    setFilteredEvents(
+      events.filter((event) => filteredData.includes(event.gamePlayed))
+    );
+  }
+
   const handleFilterEvents = (datesInRange) => {
     const eventsInRange = events.filter((event) => datesInRange.includes(event.date));
     setFilteredEvents(eventsInRange);
@@ -83,7 +89,7 @@ function EventsList() {
       <Container className='d-flex'>
         <HideFullEvents events={events} setFilteredEvents={setFilteredEvents} />
         <ShowLocalEvents onSelectLocation={handleSelectLocation} />
-        <FilterEventByGame/>
+        <FilterEventByGame onFilterEvents={handleFilterGames}/>
         <FilterByDate onFilterEvents={handleFilterEvents}/>
       </Container>
       <Container className="d-flex">
