@@ -37,6 +37,7 @@ function CreateEvent() {
       time: time,
       gamePlayed: selectedGame.title, // Use the selected game's id
       location: location,
+      currentPlayers: 1,
       isFilled: false,
     };
 

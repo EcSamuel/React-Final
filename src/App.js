@@ -11,7 +11,6 @@ import EventsList from './Components/Events/EventsList';
 import FilterEventByGame from './Components/Events/FilterEventByGame';
 import FilterEventByDate from './Components/Events/FilterEventByDate';
 import ShowLocalEvents from './Components/Events/ShowLocalEvents';
-import EventCard from './Components/Events/EventCard';
 
 function App() {
   const users = []; // Replace with your actual users data
