@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import axios from 'axios';
 
-const ShowLocalEvents = ({ onSelectLocation}) => {
+const ShowLocalEvents = ({ onSelectLocation }) => {
   const eventURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Event`;
   const [locations, setLocations] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState('');

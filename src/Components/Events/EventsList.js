@@ -6,6 +6,9 @@ import DeleteEvent from './DeleteEvent';
 import AddPlayer from './AddPlayer';
 import EventFillCheck from './EventFillCheck';
 import HideFullEvents from './HideFullEvents';
+import ShowLocalEvents from './ShowLocalEvents';
+import FilterEventByGame from './FilterEventByGame';
+import FilterByDate from './FilterEventByDate';
 
 function EventsList() {
   const eventURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Event`;
@@ -13,8 +16,10 @@ function EventsList() {
   const [events, setEvents] = useState([]);
   const [games, setGames] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedDate, setSelectedDate] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,6 +41,29 @@ function EventsList() {
     fetchData();
   }, []);
 
+  const handleSelectLocation = (location) => {
+    setSelectedLocation(location);
+    if (location === '') {
+      setFilteredEvents(events);
+    } else {
+      const filteredByLocation = events.filter((event) => event.location === location);
+      setFilteredEvents(filteredByLocation);
+    }
+  };
+
+  const handleFilterEvents = (datesInRange) => {
+    const eventsInRange = events.filter((event) => datesInRange.includes(event.date));
+    setFilteredEvents(eventsInRange);
+  };
+
+  if (loading) {
+    return <div>Loading events...</div>;
+  }
+
+  if (error) {
+    return <div>No Events Exist Between These Dates. Check Event Dates and Try Again!</div>;
+  }
+
   if (loading) {
     return <div>Loading events...</div>;
   }
@@ -52,7 +80,12 @@ function EventsList() {
 
   return (
     <>
-      <HideFullEvents events={events} setFilteredEvents={setFilteredEvents} />
+      <Container className='d-flex'>
+        <HideFullEvents events={events} setFilteredEvents={setFilteredEvents} />
+        <ShowLocalEvents onSelectLocation={handleSelectLocation} />
+        <FilterEventByGame/>
+        <FilterByDate onFilterEvents={handleFilterEvents}/>
+      </Container>
       <Container className="d-flex">
         <Row className="justify-content-center">
           {filteredEvents.map((event) => (

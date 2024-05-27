@@ -19,7 +19,6 @@ function Events() {
         <EventsList/>
         <FilterEventByGame/>
         {/* <FilterEventByDate/> */}
-        <ShowLocalEvents/>
     </div>
   )
 }
