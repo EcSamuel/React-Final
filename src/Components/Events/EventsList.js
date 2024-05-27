@@ -47,7 +47,8 @@ function EventsList() {
                     <Card.Text>Location: {event.location}</Card.Text>
                     <Card.Text>Date: {event.date}</Card.Text>
                     <Card.Text>Begins At: {event.time}</Card.Text>
-                    <Card.Text>Game Id: {event.gameId}</Card.Text>
+                    {/* <Card.Text>Game Id: {event.gameId}</Card.Text> */}
+                    <Card.Text>Game: {event.gamePlayed}</Card.Text>
                     <Card.Text>Event Full? {event.isFilled ? "Yes" : "No"}</Card.Text>
                     <UpdateEvent event={event}/>
                     <DeleteEvent id={event.id}/>

@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Form, FormControl } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import axios from 'axios';
+import GameDropdown from '../GameDropdown'; // Ensure the correct import path
 
 function CreateEvent() {
   const eventURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Event`;
-  const [events, setEvents] = useState('');
+  const [events, setEvents] = useState([]);
   const [eventName, setEventName] = useState('');
-  const [gameId, setGameId] = useState('');
+  const [selectedGame, setSelectedGame] = useState(null); // Store the selected game object
   const [location, setLocation] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [] = useState('');
-
 
   useEffect(() => {
     const grabEvents = async () => {
       try {
         const res = await axios.get(eventURL);
-        console.log(res.data);
-        setEvents(res.data); // Update the state with the fetched data
+        setEvents(res.data);
       } catch (error) {
         console.error('Error calling events at useEffect', error);
         setError('Failed to fetch events.');
@@ -33,28 +31,30 @@ function CreateEvent() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`yes, you pushed the button`);
     const newEvent = {
       eventName: eventName,
       date: date,
       time: time,
-      gameId: gameId,
+      gamePlayed: selectedGame.title, // Use the selected game's id
       location: location,
-      isFilled: false
-
+      isFilled: false,
     };
+
     try {
       const response = await axios.post(eventURL, newEvent);
       console.log(`You have successfully added ${newEvent.eventName}`);
       console.log(response.data);
       setEventName('');
       setDate('');
-      setGameId('');
+      setSelectedGame(null); // Reset the selected game
       setLocation('');
-      setGameId('');
     } catch (error) {
       console.error('Error Adding Connection', error);
     }
+  };
+
+  const handleSelectGame = (game) => {
+    setSelectedGame(game); // Store the selected game object
   };
 
   return (
@@ -98,13 +98,14 @@ function CreateEvent() {
           />
         </div>
         <div>
-          <label>Game ID `(this will eventually require some more smart coding probably with a switch or params)`</label>
-          <input
-            type="number"
-            value={gameId}
-            onChange={(e) => setGameId(e.target.value)}
-            required
-          />
+          <label>Game Played</label>
+          <GameDropdown onSelectGame={handleSelectGame} />
+          {selectedGame && (
+            <div style={{ marginTop: '20px' }}>
+              <h4>Selected Game</h4>
+              <p><strong>Title:</strong> {selectedGame.title}</p>
+            </div>
+          )}
         </div>
         <Button type="submit">Add Your Event</Button>
       </Form>
@@ -112,4 +113,4 @@ function CreateEvent() {
   );
 }
 
-export default CreateEvent
+export default CreateEvent;

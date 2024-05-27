@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Dropdown, DropdownButton, Container, Button } from "react-bootstrap";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+import axios from 'axios';
 
-const GameDropdown = () => {
+const GameDropdown = ({ onSelectGame }) => {
   const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;
   const [show, setShow] = useState(false);
-  const [selectedGame, setSelectedGame] = useState(null);
   const [games, setGames] = useState([]);
+  const [selectedGameTitle, setSelectedGameTitle] = useState("Select a game");
 
   useEffect(() => {
     const grabGames = async () => {
@@ -14,17 +14,17 @@ const GameDropdown = () => {
         const res = await axios.get(gameURL);
         setGames(res.data);
       } catch (error) {
-        console.error("Error fetching games:", error);
+        console.error('Error fetching games:', error);
       }
     };
     grabGames();
   }, []);
-// it is not getting to the games here -rename to more accurately represent what is being sent in
-  const handleSelect = (gameAsString) => {
-    const game = JSON.parse(gameAsString)
-    setSelectedGame(game);
-    console.log(`you have selected ${game.title}`)
-    setShow(false); // Close the dropdown after selection
+
+  const handleSelect = (eventKey) => {
+    const game = JSON.parse(eventKey);
+    onSelectGame(game); // Pass the entire game object
+    setSelectedGameTitle(game.title); // Update the selected game title
+    setShow(false);
   };
 
   const toggleDropdown = () => {
@@ -32,32 +32,19 @@ const GameDropdown = () => {
   };
 
   return (
-    // Present suspicion is that the games.map bit doesn't work. I currently believe the reason is because I need a middle man but am uncertain. Hoping to ask Mike or a Mentor. dig into eventKey!!! Look up id specifically
-    <>
-      <div>How Do You Play?</div>
-      <DropdownButton
-        id="dropdown-basic-button"
-        title={"Select a game"}
-        show={show}
-        onToggle={toggleDropdown}
-        onSelect={handleSelect}
-      >
-        {games.map((game) => (
-          <Dropdown.Item key={game.id} eventKey={JSON.stringify(game)}>
-            {game.title}
-          </Dropdown.Item>
-        ))}
-      </DropdownButton>
-      {selectedGame && (
-        <div style={{ marginTop: "20px" }}>
-          <h3>{selectedGame.title}</h3>
-          <p>{selectedGame.gameInfo}</p>
-          <p>
-            <strong>Max Players:</strong> {selectedGame.maxPlayers}
-          </p>
-        </div>
-      )}
-    </>
+    <DropdownButton
+      id="dropdown-basic-button"
+      title={selectedGameTitle}
+      show={show}
+      onToggle={toggleDropdown}
+      onSelect={handleSelect}
+    >
+      {games.map((game) => (
+        <Dropdown.Item key={game.id} eventKey={JSON.stringify(game)}>
+          {game.title}
+        </Dropdown.Item>
+      ))}
+    </DropdownButton>
   );
 };
 
