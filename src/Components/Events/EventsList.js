@@ -114,7 +114,7 @@ function EventsList() {
                     maxPlayers={getMaxPlayers(event)}
                   />
                   <UpdateEvent event={event} />
-                  <DeleteEvent id={event.id} />
+                  <DeleteEvent id={event.id} setEvents={setEvents} />
                 </Card.Body>
               </Card>
             </Col>

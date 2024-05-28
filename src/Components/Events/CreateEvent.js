@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import axios from 'axios';
 import GameDropdown from '../GameDropdown'; // Ensure the correct import path
+import { grabEvents } from './API';
 
 function CreateEvent() {
   const eventURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Event`;
@@ -15,19 +16,16 @@ function CreateEvent() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const grabEvents = async () => {
-      try {
-        const res = await axios.get(eventURL);
-        setEvents(res.data);
-      } catch (error) {
-        console.error('Error calling events at useEffect', error);
-        setError('Failed to fetch events.');
-      } finally {
-        setLoading(false);
-      }
-    };
-    grabEvents();
+    
+  setThem()
   }, []);
+
+  // This delays the info so that we are not setting events to undefined
+  //before the data gets back
+  const setThem = async () =>{
+    let data = await grabEvents()
+    setEvents(data)
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
