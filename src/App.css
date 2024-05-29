@@ -56,14 +56,20 @@ nav {
 
 .bordered-text {
   -webkit-text-stroke: 1px black; /* For better rendering on macOS/iOS */
-  text-stroke: 1px black; /* For better rendering on other platforms */
-  -webkit-text-fill-color: rgb(145, 22, 22); /* For better rendering on macOS/iOS */
-  text-fill-color: rgb(145, 22, 22);
+  text-stroke: 1px rgb(100, 100, 100); /* For better rendering on other platforms */
+  -webkit-text-fill-color: rgb(11, 19, 155); /* For better rendering on macOS/iOS */
+  text-fill-color: rgb(11, 19, 155);
 }
 
 h1, h2, h3, h4, h5, h6, p, span, div {
   -webkit-text-stroke: 1px black;
-  text-stroke: 1px black;
-  -webkit-text-fill-color: rgb(145, 22, 22);
-  text-fill-color: rgb(145, 22, 22);
+  text-stroke: 1px rgb(100, 100, 100);
+  -webkit-text-fill-color: rgb(11, 19, 155);
+  text-fill-color: rgb(11, 19, 155);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.readable-container {
+  background-color: rgba(255, 255, 255, 0.4); /* 20% white background */
+  border-radius: 20px;
 }

@@ -10,7 +10,7 @@ const GameList = () => {
         <Container className=''>
             <AddGame/>
 
-            Currently Supported Games
+            <h3 className='justify-content-center align-items-center'>Currently Supported Games</h3>
             <GamesList/>
             <GameDropdown/>
           

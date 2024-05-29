@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Form, FormControl } from 'react-bootstrap';
+import { Button, Form, FormControl, Container } from 'react-bootstrap';
 import axios from 'axios';
 
 function AddGame() {
@@ -43,9 +43,9 @@ function AddGame() {
   };
 
   return (
-    <div>
-      <h2>Don't See The Game You Play? Add It Here</h2>
-      <form onSubmit={handleSubmit}>
+    <Container className='readable-container justify-content-center'>
+      <h3>Don't See The Game You Play? Add It Here</h3>
+      <form onSubmit={handleSubmit} className='d-flex flex-wrap'>
         <div>
           <label>Game Title:</label>
           <input
@@ -73,9 +73,9 @@ function AddGame() {
             required
           />
         </div>
-        <Button variant="info" type="submit">Add Your Game</Button>
+        <Button variant="success" type="submit">Add Your Game</Button>
       </form>
-    </div>
+    </Container>
   );
 }
 

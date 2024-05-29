@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Container } from 'react-bootstrap';
 import axios from 'axios';
 import GameDropdown from '../GameDropdown'; // Ensure the correct import path
 import { grabEvents } from './API';
@@ -57,9 +57,9 @@ function CreateEvent() {
   };
 
   return (
-    <div className="container">
+    <Container className="container readable-container">
       <h2>Add New Event</h2>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className='d-flex flex-wrap'>
         <div>
           <label>Event Name:</label>
           <input
@@ -106,9 +106,9 @@ function CreateEvent() {
             </div>
           )}
         </div>
-        <Button type="submit">Add Your Event</Button>
+        <Button className='' variant='success' type="submit">Add Your Event</Button>
       </Form>
-    </div>
+    </Container>
   );
 }
 

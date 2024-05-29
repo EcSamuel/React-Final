@@ -11,15 +11,10 @@ import HideFullEvents from '../Events/HideFullEvents';
 
 function Events() {
   return (
-    <div className='container justtify-content-center'>
-        The Goal of Events is to display user made events that reference games within other API's.
-
-        I know I will need to run the following functions:
+    <Container className='justtify-content-center'>
         <CreateEvent/>
         <EventsList/>
-        <FilterEventByGame/>
-        {/* <FilterEventByDate/> */}
-    </div>
+    </Container>
   )
 }
 

@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 
 function ShowHomePage() {
   return (
-    <Container className ='align-items-center'>
+    <Container className ='align-items-center readable-container'>
         <h2 className="bordered-text">Welcome User!</h2>
         <h3 className="bordered-text">How to use this website:</h3>
             <ul className="bordered-text">
