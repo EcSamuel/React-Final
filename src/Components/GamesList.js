@@ -29,7 +29,7 @@ function GamesList() {
         <Row className='justify-content-center'>
             {games.map((game) => (
                 <Col key={game.id} sm={12} md={6} lg={4} className="mb-3">
-                    <Card border='primary' style={{width: '20vw'}}>
+                    <Card border='primary' style={{width: 'mw-automatic'}}>
                         <Card.Body>
                             <Card.Title>{game.title}</Card.Title>
                             <Card.Text>Supported Players: {game.maxPlayers}</Card.Text>

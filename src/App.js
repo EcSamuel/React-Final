@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } 
 import { Navbar, Nav, Form, FormControl, Button, Dropdown, Card, CardDeck, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import LayoutWrapper from './Components/LayoutWrapper';
+import ShowHomePage from './Components/Pages/HomePage';
 import GameList from './Components/Pages/Games';
 import GameDropdown from './Components/GameDropdown';
 import AddGame from './Components/AddGame';
@@ -13,8 +15,8 @@ import FilterEventByDate from './Components/Events/FilterEventByDate';
 import ShowLocalEvents from './Components/Events/ShowLocalEvents';
 
 function App() {
-  const users = []; // Replace with your actual users data
-  const games = []; // Replace with your actual games data
+  const events = [];
+  const games = [];
 
   return (
     <div>
@@ -48,24 +50,34 @@ function App() {
 }
 
 function HomePage() {
-  return <h2>Welcome, User! Please Select a Menu</h2>;
+  return (
+    <LayoutWrapper>
+      <div className='d-flex justify-content-center'>
+        <ShowHomePage />
+      </div>
+    </LayoutWrapper>
+  );
 }
 
 function EventsPage({ events }) {
   return (
-    <div className='d-flex justify-content-center'>
-      <h2>Events</h2>
-      <Events/>
-    </div>
+    <LayoutWrapper>
+      <div className='d-flex justify-content-center'>
+        <h2>Events</h2>
+        <Events />
+      </div>
+    </LayoutWrapper>
   );
 }
 
 function Games({ games }) {
   return (
-    <div className='d-flex justify-content-center'>
-      <h2>Games</h2>
-      <GameList/>
-    </div>
+    <LayoutWrapper>
+      <div className='d-flex justify-content-center'>
+        <h2>Games</h2>
+        <GameList />
+      </div>
+    </LayoutWrapper>
   );
 }
 
