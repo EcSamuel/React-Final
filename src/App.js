@@ -52,7 +52,7 @@ function App() {
 function HomePage() {
   return (
     <LayoutWrapper>
-      <div className='d-flex justify-content-center'>
+      <div className=''>
         <ShowHomePage />
       </div>
     </LayoutWrapper>
@@ -62,7 +62,7 @@ function HomePage() {
 function EventsPage({ events }) {
   return (
     <LayoutWrapper>
-      <div className='d-flex justify-content-center'>
+      <div className=''>
         <h2>Events</h2>
         <Events />
       </div>
@@ -73,8 +73,8 @@ function EventsPage({ events }) {
 function Games({ games }) {
   return (
     <LayoutWrapper>
-      <div className='d-flex justify-content-center'>
-        <h2>Games</h2>
+      <div className=''>
+        <h2 className=''>Games</h2>
         <GameList />
       </div>
     </LayoutWrapper>

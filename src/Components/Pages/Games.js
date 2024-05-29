@@ -12,8 +12,6 @@ const GameList = () => {
 
             <h3 className='justify-content-center align-items-center'>Currently Supported Games</h3>
             <GamesList/>
-            <GameDropdown/>
-          
         </Container>
     )
 }
