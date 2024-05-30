@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { Dropdown, DropdownButton, Container } from 'react-bootstrap';
 import axios from 'axios';
 
 const FilterByDate = ({ onFilterEvents }) => {
@@ -41,7 +41,7 @@ const FilterByDate = ({ onFilterEvents }) => {
   };
 
   return (
-    <div>
+    <Container className='d-flex'>
       <DropdownButton
         id="dropdown-start-date"
         title={startDate || "Select Start Date"}
@@ -66,7 +66,7 @@ const FilterByDate = ({ onFilterEvents }) => {
           </Dropdown.Item>
         ))}
       </DropdownButton>
-    </div>
+    </Container>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form, FormControl, Container } from 'react-bootstrap';
 import axios from 'axios';
+import {grabGames} from './Events/API.js'
 
 function AddGame() {
   const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;

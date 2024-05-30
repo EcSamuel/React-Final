@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {Button, Card, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
+import { grabGames } from './Events/API';
+import '../App.css'
 
 
 function GamesList() {
@@ -29,7 +31,7 @@ function GamesList() {
         <Row className='justify-content-center'>
             {games.map((game) => (
                 <Col key={game.id} sm={12} md={6} lg={4} className="mb-3">
-                    <Card border='primary' style={{width: 'mw-automatic'}}>
+                    <Card border='primary' className='card-display-container' style={{width: 'mw-automatic'}}>
                         <Card.Body>
                             <Card.Title>{game.title}</Card.Title>
                             <Card.Text>Supported Players: {game.maxPlayers}</Card.Text>
