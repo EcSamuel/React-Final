@@ -33,6 +33,7 @@ const GameDropdown = ({ onSelectGame }) => {
 
   return (
     <DropdownButton
+      className='button-text'
       id="dropdown-basic-button"
       title={selectedGameTitle}
       show={show}

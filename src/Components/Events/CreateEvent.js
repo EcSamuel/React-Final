@@ -106,7 +106,7 @@ function CreateEvent() {
             </div>
           )}
         </div>
-        <Button className='' variant='success' type="submit">Add Your Event</Button>
+        <Button className='button-text' variant='success' type="submit">Add Your Event</Button>
       </Form>
     </Container>
   );

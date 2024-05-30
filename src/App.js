@@ -19,11 +19,11 @@ function App() {
   const games = [];
 
   return (
-    <div>
+    <Container className='bordered-text'>
       <div>
         <Navbar bg="dark" expand="lg" fixed="top">
           <Container className="justify-content-center">
-            <Navbar.Brand style={{color: 'blue'}} href="#home">Rule Zer0 Game Finder</Navbar.Brand>
+            <Navbar.Brand style={{color: 'white'}} id='logo-title' href="#home">Rule Zer0 Game Finder</Navbar.Brand>
               <ul>
                 <li>
                   <Link to="/">Home</Link>
@@ -39,13 +39,13 @@ function App() {
         </Navbar>
         <div className='main-content'>
           <Routes>
-            <Route path="/events" element={<EventsPage />} /> {/*issue on this line that might come up- I had to delete the props passed in to stop it from baby raging at me*/}
+            <Route path="/events" element={<EventsPage events={events} />} /> {/*issue on this line that might come up- I had to delete the props passed in to stop it from baby raging at me*/}
             <Route path="/games" element={<Games games={games} />} />
             <Route path="/" element={<HomePage />} />
           </Routes>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 
@@ -62,9 +62,9 @@ function HomePage() {
 function EventsPage({ events }) {
   return (
     <LayoutWrapper>
-      <div className=''>
+      <div className='justify-content-center'>
         <h2>Events</h2>
-        <Events />
+        <Events/>
       </div>
     </LayoutWrapper>
   );

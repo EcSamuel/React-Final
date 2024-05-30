@@ -86,7 +86,7 @@ function EventsList() {
 
   return (
     <>
-      <Container className='d-flex'>
+      <Container className='d-flex justify-content-between'>
         <HideFullEvents events={events} setFilteredEvents={setFilteredEvents} />
         <ShowLocalEvents onSelectLocation={handleSelectLocation} />
         <FilterEventByGame onFilterEvents={handleFilterGames}/>
@@ -96,7 +96,7 @@ function EventsList() {
         <Row className="justify-content-center">
           {filteredEvents.map((event) => (
             <Col key={event.id} sm={12} md={6} lg={4} className="mb-3">
-              <Card border="primary" style={{ width: 'mw-automatic' }}>
+              <Card className='readable-container' border="primary" style={{ width: 'mw-automatic' }}>
                 <Card.Body>
                   <Card.Title>{event.eventName}</Card.Title>
                   <Card.Text>Location: {event.location}</Card.Text>
