@@ -16,8 +16,18 @@ function CreateEvent() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    
-  setThem()
+    const grabEvents = async () => {
+      try {
+        const res = await axios.get(eventURL);
+        setEvents(res.data);
+      } catch (error) {
+        console.error('Error calling events at useEffect', error);
+        setError('Failed to fetch events.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    grabEvents();
   }, []);
 
   // This delays the info so that we are not setting events to undefined

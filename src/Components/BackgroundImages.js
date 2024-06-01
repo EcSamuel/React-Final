@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
-
+// I wanted an array of imageURL's that allowed for a dynamic background for the website. 
 const BackgroundImages = () => {
   const imageUrls = [
     'https://www.tightpoker.com/app/uploads/2023/01/Ultimate-Texas-Holdem-2-scaled-1.jpg',
@@ -13,7 +13,7 @@ const BackgroundImages = () => {
   ];
 
   const [randomImage, setRandomImage] = useState('');
-
+// Here's where the random part comes in. Just provides a random value within the length of the array
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
     setRandomImage(imageUrls[randomIndex]);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import axios from 'axios';
-
+// GameDropdown as a selector tool was strange to design. I originally wanted it to have another purpose entirely, but it worked better as a tool to select for events than it did as a reminder of what the games information was
 const GameDropdown = ({ onSelectGame }) => {
   const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;
   const [show, setShow] = useState(false);

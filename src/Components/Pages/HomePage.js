@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 
 function ShowHomePage() {
+  // HomePage is pretty much just jsx and rawtext. Its an informational page but that's ok. Hoping to use it as a growing changelog for other elements I might want to write down the road.
   return (
     <Container className ='align-items-center readable-container'>
         <h2>Welcome all lovers of card, board, and tabletop gaming!</h2>
@@ -19,15 +20,11 @@ function ShowHomePage() {
                 <li>Create and read reviews by verified players of the games you want to share about.</li>
                 <li>Like someone you met on the site? Provide player endorsements so others know why they are a great fit for your table!</li>
             </ul>
-
-        <h3>Have a suggestion of a feature you'd like to see implemented?</h3>
-            <p>Share with us through <a href="mailto:thethans@gmail.com">this link!</a></p>
-
+            
         <h3>The Idea Behind Rule Zer0</h3>
           <p>Games are important to many of us. Time is precious, and the best games take work. 
             Founded around the principle of the Dungeons and Dragons and Commander Community's ideas of "session zero" and "rule zero gameplay", Rule Zer0 intends to make finding like-minded players for your favorite card, board, and tabletop game easier.</p>
     </Container>
-
   )
 }
 

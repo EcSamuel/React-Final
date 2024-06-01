@@ -13,13 +13,15 @@ import EventsList from './Components/Events/EventsList';
 import FilterEventByGame from './Components/Events/FilterEventByGame';
 import FilterEventByDate from './Components/Events/FilterEventByDate';
 import ShowLocalEvents from './Components/Events/ShowLocalEvents';
+import Footer from './Footer';
 
 function App() {
   const events = [];
   const games = [];
-
+// Begin run of the Router Function and NavBar
   return (
-    <Container className='bordered-text'>
+    <>
+    <Container className=''>
       <div>
         <Navbar bg="dark" expand="lg" fixed="top">
           <Container className="justify-content-center">
@@ -37,7 +39,8 @@ function App() {
               </ul>
           </Container>
         </Navbar>
-        <div className='main-content'>
+        {/* Routes themselves */}
+        <div className='main-content' style={{paddingBottom: '7%'}}>
           <Routes>
             <Route path="/events" element={<EventsPage events={events} />} /> {/*issue on this line that might come up- I had to delete the props passed in to stop it from baby raging at me*/}
             <Route path="/games" element={<Games games={games} />} />
@@ -46,9 +49,11 @@ function App() {
         </div>
       </div>
     </Container>
+    <Footer className="justify-content-center" expand="lg" fixed="bottom"/>
+    </>
   );
 }
-
+// Page functions are called, wrapped in styling
 function HomePage() {
   return (
     <LayoutWrapper>
@@ -58,22 +63,22 @@ function HomePage() {
     </LayoutWrapper>
   );
 }
-
+// EventsPage. Some style was previously not applying correctly at this level
 function EventsPage({ events }) {
   return (
     <LayoutWrapper>
-      <div className='justify-content-center'>
+      <div className='text-center'>
         <h2>Events</h2>
         <Events/>
       </div>
     </LayoutWrapper>
   );
 }
-
+// GamesPage. Removed className to verify how styling was or wasn't working.
 function Games({ games }) {
   return (
     <LayoutWrapper>
-      <div className=''>
+      <div className='text-center'>
         <h2 className=''>Games</h2>
         <GameList />
       </div>

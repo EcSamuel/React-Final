@@ -3,14 +3,13 @@ import {Button, Card, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 import { grabGames } from './Events/API';
 import '../App.css'
-
-
+// this is how and where I am mapping out the games to the DOM
 function GamesList() {
     const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;
     const [games, setGames] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+// There were multiple suggestions to do loading and error loops when writing code, so I left them in as best practice, but the API's are small enough they're not popping up under regular circumstances.
     useEffect(() => {
         const grabGames = async () => {
             axios

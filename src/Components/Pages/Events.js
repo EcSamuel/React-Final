@@ -12,6 +12,7 @@ import HideFullEvents from '../Events/HideFullEvents';
 function Events() {
   return (
     <Container className='justtify-content-center'>
+      {/* EventsList will contain all functions that need to be stored on the cards inside the map portion. All filter components will be written above. */}
         <CreateEvent/>
         <EventsList/>
     </Container>
