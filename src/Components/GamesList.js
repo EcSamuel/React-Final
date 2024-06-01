@@ -34,7 +34,10 @@ function GamesList() {
                         <Card.Body>
                             <Card.Title>{game.title}</Card.Title>
                             <Card.Text>Supported Players: {game.maxPlayers}</Card.Text>
+                            {/* <Card.Text>Genre: {game.genre}</Card.Text> */}
+                            <Card.Text>Type: {game.type}</Card.Text>
                             <Card.Text>Description: {game.gameInfo}</Card.Text>
+                            
                         </Card.Body>
                     </Card>
                 </Col>

@@ -57,9 +57,11 @@ function App() {
 function HomePage() {
   return (
     <LayoutWrapper>
-      <div className=''>
-        <ShowHomePage />
-      </div>
+      <Container className='centered-wrapper'>
+        <Container className='centered-content'>
+          <ShowHomePage />
+        </Container>
+      </Container>
     </LayoutWrapper>
   );
 }

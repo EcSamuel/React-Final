@@ -67,12 +67,13 @@ function CreateEvent() {
   };
 
   return (
-    <Container className="container readable-container">
+    <Container className="container readable-container justify-content-center">
       <h2>Add New Event</h2>
       <Form onSubmit={handleSubmit} className='d-flex flex-wrap'>
+      <Container className='d-flex justify-content-around'>
         <div>
-          <label>Event Name:</label>
-          <input
+          <Form.Label className='readable-labels'>Event Name:</Form.Label>
+          <Form.Control
             type="text"
             value={eventName}
             onChange={(e) => setEventName(e.target.value)}
@@ -80,8 +81,8 @@ function CreateEvent() {
           />
         </div>
         <div>
-          <label>Date</label>
-          <input
+          <Form.Label className='readable-labels'>Date</Form.Label>
+          <Form.Control
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
@@ -89,8 +90,8 @@ function CreateEvent() {
           />
         </div>
         <div>
-          <label>Time of Day</label>
-          <input
+          <Form.Label className='readable-labels'>Time of Day</Form.Label>
+          <Form.Control
             type="time"
             value={time}
             onChange={(e) => setTime(e.target.value)}
@@ -98,8 +99,8 @@ function CreateEvent() {
           />
         </div>
         <div>
-          <label>Location</label>
-          <input
+          <Form.Label className='readable-labels'>Location</Form.Label>
+          <Form.Control
             type="text"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -107,7 +108,7 @@ function CreateEvent() {
           />
         </div>
         <div>
-          <label>Game Played</label>
+          <Form.Label className='readable-labels'>Game Played</Form.Label>
           <GameDropdown onSelectGame={handleSelectGame} />
           {selectedGame && (
             <div style={{ marginTop: '20px' }}>
@@ -116,7 +117,10 @@ function CreateEvent() {
             </div>
           )}
         </div>
-        <Button className='' variant='success' type="submit">Add Your Event</Button>
+        </Container>
+        <Container className='justify-content-center'>
+          <Button className='justify-content-center' variant='success' type="submit">Add Your Event</Button>
+        </Container>
       </Form>
     </Container>
   );

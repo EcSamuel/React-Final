@@ -104,3 +104,24 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   font-size: 0.9rem;
   color: #ffffff
 }
+
+.readable-labels {
+  font-weight: 600;
+}
+
+.centered-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* set height to full viewport height */
+}
+
+/* Since React v6 */
+.centered-wrapper .centered-content {
+  color: inherit; 
+}
+
+/* React v5 and older */
+.centered-wrapper .centered-content .color-inherit {
+  color: inherit;
+}

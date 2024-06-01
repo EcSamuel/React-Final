@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Container, Row, Col } from 'react-bootstrap';
+import { Button, Card, Container, Row, Col, Accordion } from 'react-bootstrap';
 import UpdateEvent from './UpdateEvent';
 import axios from 'axios';
 import DeleteEvent from './DeleteEvent';
@@ -86,11 +86,14 @@ function EventsList() {
 
   return (
     <>
-      <Container className='d-flex justify-content-between'>
+      <Container className='d-flex justify-content-center flex-wrap' style={{margin:''}}>
         <HideFullEvents events={events} setFilteredEvents={setFilteredEvents} />
         <ShowLocalEvents onSelectLocation={handleSelectLocation} />
         <FilterEventByGame onFilterEvents={handleFilterGames}/>
-        <FilterByDate onFilterEvents={handleFilterEvents}/>
+        <Container className='d-flex justify-content-center'>
+          <FilterByDate onFilterEvents={handleFilterEvents}/>
+        </Container>
+
       </Container>
       <Container className="d-flex">
         <Row className="justify-content-center">
@@ -113,7 +116,14 @@ function EventsList() {
                     events={events}
                     maxPlayers={getMaxPlayers(event)}
                   />
-                  <UpdateEvent event={event} />
+                  <Accordion defaultActiveKey="">
+                    <Accordion.Item eventKey="0">
+                      <Accordion.Header>Change of Plans? Click Here</Accordion.Header>
+                      <Accordion.Body>
+                        <UpdateEvent event={event} />
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
                   <DeleteEvent id={event.id} setEvents={setEvents} />
                 </Card.Body>
               </Card>

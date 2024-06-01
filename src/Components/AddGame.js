@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form, FormControl, Container } from 'react-bootstrap';
 import axios from 'axios';
-import {grabGames} from './Events/API.js'
+import Select from 'react-select';
+import {grabGames} from './Events/API.js';
 // Here is where I did not replicate the instructor code. I have tried using methods of the read and get calls but they're running more cleanly in here. When either totally refactoring this project or for the next React.js build, I believe it will be better to begin with them external and then continually test the function instead.
 function AddGame() {
   const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;
   const [title, setTitle] = useState('');
   const [maxPlayers, setMaxPlayers] = useState('');
   const [gameInfo, setGameInfo] = useState('');
+  const [genre, setGenre] = useState([]);
+  const [type, setType] =useState('');
 
   useEffect(() => {
     const grabGames = async () => {
@@ -30,6 +33,8 @@ function AddGame() {
       title: title,
       maxPlayers: maxPlayers,
       gameInfo: gameInfo,
+      type: type,
+      // genre: genre.length > 0 ? genre : [], // If genre is empty, set it to an empty array
     };
     try {
       const response = await axios.post(gameURL, newGame);
@@ -38,44 +43,77 @@ function AddGame() {
       setTitle('');
       setMaxPlayers('');
       setGameInfo('');
+      // setGenre([]);
+      setType('');
     } catch (error) {
       console.error('Error Adding Connection', error);
     }
   };
+
+  const genres = ["Adventure", "Strategy", "Puzzle", "RPG", "Party", "Card", "Board"];
+  const types = ["Board Game", "Classical Card Game", "Trading/Collectible Card Game", "Tabletop Game", "War Game", "Role Playing Game"];
+
 // Form to submit for the games to be added via the above handleSubmit
-  return (
-    <Container className='readable-container justify-content-center'>
+return(
+  <Container className='readable-container justify-content-center'>
       <h3>Don't See The Game You Play? Add It Here</h3>
-      <form onSubmit={handleSubmit} className='d-flex flex-wrap'>
-        <div>
-          <label>Game Title:</label>
-          <input
+      <Form onSubmit={handleSubmit} className='d-flex flex-wrap justify-content-center'>
+        <Container className='d-flex justify-content-around'>
+        <div className="form-group">
+          <Form.Label className='readable-labels'>Game Title:</Form.Label>
+          <Form.Control
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label>Maximum Players:</label>
-          <input
+        <div className="form-group">
+          <Form.Label className='readable-labels'>Maximum Players:</Form.Label>
+          <Form.Control
             type="number"
             value={maxPlayers}
             onChange={(e) => setMaxPlayers(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label>Game Description</label>
-          <input
-            type="textarea"
+        {/* <div className="form-group">
+        <Form.Label>Genre</Form.Label>
+        <Select
+          isMulti
+          value={genre} // Pass the genre array directly
+          onChange={(selectedOptions) => setGenre(selectedOptions.map((option) => option.value))}
+          options={genres.map((g) => ({ value: g, label: g }))}
+          className="basic-multi-select"
+          classNamePrefix="select"
+        />
+        </div> */}
+        <div className="form-group">
+          <Form.Label className='readable-labels'>Game Type</Form.Label>
+          <Form.Select
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            required
+          >
+            <option value="">Select Game Type</option>
+            {types.map((t, index) => (
+              <option key={index} value={t}>{t}</option>
+            ))}
+          </Form.Select>
+        </div>
+        <div className="form-group">
+          <Form.Label className='readable-labels'>Game Description</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
             value={gameInfo}
             onChange={(e) => setGameInfo(e.target.value)}
             required
           />
         </div>
-        <Button variant="success" type="submit">Add Your Game</Button>
-      </form>
+        </Container>
+        <Button variant="success" size='btn-sm' type="submit">Add Your Game</Button>
+      </Form>
     </Container>
   );
 }
