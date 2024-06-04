@@ -93,12 +93,12 @@ function EventsList() {
         <Container className='d-flex justify-content-center'>
           <FilterByDate onFilterEvents={handleFilterEvents}/>
         </Container>
-
+{/* One Breakpoint means they're all playing by the same rules for the map function below */}
       </Container>
       <Container className="d-flex">
         <Row className="justify-content-center">
           {filteredEvents.map((event) => (
-            <Col key={event.id} sm={12} md={6} lg={4} className="mb-3">
+            <Col key={event.id} className="mb-3">
               <Card className='card-display-container' border="primary" style={{ width: 'mw-automatic' }}>
                 <Card.Body>
                   <Card.Title>{event.eventName}</Card.Title>
