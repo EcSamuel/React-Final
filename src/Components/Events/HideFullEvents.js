@@ -13,8 +13,8 @@ const HideFullEvents = ({ events, setFilteredEvents }) => {
   };
 
   return (
-    <Button onClick={handleToggle}>
-      {hideFullEvents ? 'Show Full Events' : 'Hide Full Events'}
+    <Button className='tavern-btn-filter'onClick={handleToggle}>
+      {hideFullEvents ? 'Hide Full Events' : 'Show Full Events'}
     </Button>
   );
 };

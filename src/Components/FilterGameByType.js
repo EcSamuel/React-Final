@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Dropdown, DropdownButton, ButtonGroup, Button } from 'react-bootstrap';
 import axios from 'axios';
 
-const FilterGameByType = ({ onSelectGame }) => {
+const FilterGameByType = ({ onFilteredGames }) => {
   const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;
   const [games, setGames] = useState([]);
   const [selectedGameType, setSelectedGameType] = useState('All');
@@ -34,8 +34,11 @@ const FilterGameByType = ({ onSelectGame }) => {
     // Filter the games based on the selected game type
     if (selectedGameType === 'All') {
       setFilteredGames(games);
+      onFilteredGames(games);
     } else {
-      setFilteredGames(games.filter(game => game.type === selectedGameType));
+      const filtered = games.filter(game => game.type === selectedGameType);
+      setFilteredGames(filtered);
+      onFilteredGames(filtered);
     }
   }, [selectedGameType, games]);
 
@@ -48,6 +51,7 @@ const FilterGameByType = ({ onSelectGame }) => {
       <ButtonGroup className="mb-3">
         {gameTypes.map(type => (
           <Button
+            className='tavern-btn-filter'
             key={type}
             variant={type === selectedGameType ? 'primary' : 'secondary'}
             onClick={() => handleTypeSelect(type)}

@@ -119,7 +119,7 @@ function CreateEvent() {
         </div>
         </Container>
         <Container className='justify-content-center'>
-          <Button className='justify-content-center' variant='success' type="submit">Add Your Event</Button>
+          <Button className='justify-content-center tavern-btn-submit'type="submit">Add Your Event</Button>
         </Container>
       </Form>
     </Container>

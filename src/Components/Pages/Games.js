@@ -17,7 +17,6 @@ const GameList = () => {
     return (
         <Container className='d-inline'>
             <AddGame/>
-            <FilterGameByType onFilteredGames={handleFilteredGames}/>
             {/* Stylings were being weird here. Need to do something about the background itself there. */}
             <h3 className='justify-content-center align-items-center'>Currently Supported Games</h3>
             <GamesList games={filteredGames}/>

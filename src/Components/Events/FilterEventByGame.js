@@ -37,6 +37,7 @@ const FilterEventByGame = ({ onFilterEvents }) => {
 
   return (
     <DropdownButton
+      className='tavern-btn-filter'
       id="dropdown-basic-button"
       title={selectedGame || "Select a game"}
       onSelect={handleSelectGame}

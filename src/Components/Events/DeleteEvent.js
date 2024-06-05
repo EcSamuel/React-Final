@@ -15,7 +15,7 @@ function DeleteEvent({id, setEvents}) {
   };
 
   return (
-    <Button variant="danger" onClick={(e) => handleRemove(e)}>
+    <Button className='tavern-btn-srs' onClick={(e) => handleRemove(e)}>
       Remove Event
     </Button>
   )

@@ -3,6 +3,7 @@ import {Button, Card, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 import { grabGames } from './Events/API';
 import '../App.css'
+import FilterGameByType from './FilterGameByType';
 // this is how and where I am mapping out the games to the DOM
 function GamesList() {
     const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;
@@ -31,22 +32,27 @@ function GamesList() {
         }, []);
 
     return (
-        <Container className=''>
-            <Row className='justify-content-center'>
-            {games.map((game) => (
-                <Col key={game.id} sm={12} md={6} lg={4} className="mb-3">
-                <Card border='primary' className='card-display-container' style={{ width: 'mw-automatic' }}>
-                    <Card.Body>
-                    <Card.Title>{game.title}</Card.Title>
-                    <Card.Text>Supported Players: {game.maxPlayers}</Card.Text>
-                    <Card.Text>Type: {game.type}</Card.Text>
-                    <Card.Text>Description: {game.gameInfo}</Card.Text>
-                    </Card.Body>
-                </Card>
-                </Col>
-            ))}
-            </Row>
-        </Container>
+        <>
+            <Container className='d-flex justify-content-center'>
+                <FilterGameByType games = {games} onFilteredGames={handleFilteredGames}/>
+            </Container>
+            <Container className=''>
+                <Row className='justify-content-center'>
+                {filteredGames.map((game) => (
+                    <Col key={game.id} sm={12} md={6} lg={4} className="mb-3">
+                    <Card border='primary' className='card-display-container' style={{ width: 'mw-automatic' }}>
+                        <Card.Body>
+                        <Card.Title>{game.title}</Card.Title>
+                        <Card.Text>Supported Players: {game.maxPlayers}</Card.Text>
+                        <Card.Text>Type: {game.type}</Card.Text>
+                        <Card.Text>Description: {game.gameInfo}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                    </Col>
+                ))}
+                </Row>
+            </Container>
+        </>
         );
 }
 

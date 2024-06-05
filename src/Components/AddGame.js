@@ -112,7 +112,7 @@ return(
           />
         </div>
         </Container>
-        <Button variant="success" size='btn-sm' type="submit">Add Your Game</Button>
+        <Button className='tavern-btn-submit' size='btn-sm' type="submit">Add Your Game</Button>
       </Form>
     </Container>
   );

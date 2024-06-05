@@ -23,7 +23,7 @@ function App() {
     <>
     <Container className=''>
       <div>
-        <Navbar bg="dark" expand="lg" fixed="top">
+        <Navbar expand="lg" fixed="top">
           <Container className="justify-content-center">
             <Navbar.Brand style={{color: 'white'}} id='logo-title' href="#home">Rule Zer0 Game Finder</Navbar.Brand>
               <ul>

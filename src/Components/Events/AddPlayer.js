@@ -29,7 +29,7 @@ const AddPlayer = ({ eventId, currentPlayers, setEvents, events, maxPlayers }) =
     }
   };
 
-  return <Button onClick={handleAddPlayer}>Add Player</Button>;
+  return <Button className='tavern-btn' onClick={handleAddPlayer}>Add Player</Button>;
 };
 
 export default AddPlayer;

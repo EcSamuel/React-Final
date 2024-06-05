@@ -1,5 +1,5 @@
 nav {
-    background-color: #333;
+    background-color: #61380B;
     color: #ffffff;
     padding: 10px;
   }
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 .card-display-container {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: #E6D2B9, 0.6;
   border-radius: 20px;
 }
 
@@ -84,8 +84,8 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   bottom: 0;
   width: 100%;
   height: 7%;
-  background-color: #333; /* Light grey background */
-  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #61380B;
+  padding: 10px 20px;
   text-align: center;
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -125,3 +125,68 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 .centered-wrapper .centered-content .color-inherit {
   color: inherit;
 }
+
+.tavern-btn {
+  background-color: #A67C52;
+  border-color: #B87333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tavern-btn-srs {
+  background-color: #A0633B;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tavern-btn-srs:hover {
+  background-color: red;
+}
+
+.tavern-btn-filter {
+  background-color: purple;
+  border-color: #B87333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tavern-btn-filter:active {
+  background-color: pink;
+}
+
+.tavern-btn-submit {
+  background-color: yellowgreen;
+  border-color: #B87333;
+}
+
+#dropdown-basic-button {
+  background-color:purple;
+  border-color: #B87333;
+}
+
+#dropdown-start-date {
+  background-color:purple;
+  border-color: #B87333;
+}
+
+#dropdown-end-date {
+  background-color:purple;
+  border-color: #B87333;
+}
+
+/* colors
+  Main Colors:
+
+#61380B (Rich Sienna Brown)
+#A67C52 (Camel Brown)
+#8B5A2B (Saddle Brown)
+
+Accent Colors:
+
+#C79B6A (Tan)
+#D2B48C (Pale Goldenrod)
+#B87333 (Copper)
+
+Other Elements:
+
+#292518 (Charcoal Brown) - for text or accent elements
+#E6D2B9 (Tan Hide) - for backgrounds or textured elements
+#A0633B (Burnt Sienna) - for accents or call-to-action elements
+*/
