@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form, Container } from 'react-bootstrap';
 import axios from 'axios';
-import GameDropdown from '../GameDropdown'; // Ensure the correct import path
+import GameDropdown from '../Games/GameDropdown'; // Ensure the correct import path
 import { grabEvents } from './API';
 
 function CreateEvent() {

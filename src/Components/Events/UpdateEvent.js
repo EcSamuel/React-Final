@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import axios from 'axios';
-import GameDropdown from '../GameDropdown';
+import GameDropdown from '../Games/GameDropdown';
 import { grabEvents } from './API';
 
 function UpdateEvent({ event }) {

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form, FormControl, Container } from 'react-bootstrap';
 import axios from 'axios';
-import Select from 'react-select';
-import {grabGames} from './Events/API.js';
 // Here is where I did not replicate the instructor code. I have tried using methods of the read and get calls but they're running more cleanly in here. When either totally refactoring this project or for the next React.js build, I believe it will be better to begin with them external and then continually test the function instead.
 function AddGame() {
   const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import axios from 'axios';
-import '../App.css';
+import '../../App.css';
 
 const GameDropdown = ({ onSelectGame }) => {
   const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;
@@ -23,8 +23,8 @@ const GameDropdown = ({ onSelectGame }) => {
 
   const handleSelect = (eventKey) => {
     const game = JSON.parse(eventKey);
-    onSelectGame(game); // Pass the entire game object
-    setSelectedGameTitle(game.title); // Update the selected game title
+    onSelectGame(game);
+    setSelectedGameTitle(game.title);
     setShow(false);
   };
 

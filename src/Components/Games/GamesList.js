@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {Button, Card, Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import { grabGames } from './Events/API';
-import '../App.css'
+import '../../App.css'
 import FilterGameByType from './FilterGameByType';
 import FilterGameByMaxPlayers from './FilterGameByMaxPlayers';
 // this is how and where I am mapping out the games to the DOM
