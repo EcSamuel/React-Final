@@ -31,7 +31,6 @@ const ShowLocalEvents = ({ onSelectLocation }) => {
 
   return (
     <DropdownButton
-      className='tavern-btn-filter'
       id="dropdown-basic-button"
       title={selectedLocation || "Select a location"}
       onSelect={handleSelectLocation}

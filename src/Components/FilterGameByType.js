@@ -53,7 +53,7 @@ const FilterGameByType = ({ onFilteredGames }) => {
           <Button
             className='tavern-btn-filter'
             key={type}
-            variant={type === selectedGameType ? 'primary' : 'secondary'}
+            // variant={type === selectedGameType ? 'primary' : 'secondary'}
             onClick={() => handleTypeSelect(type)}
           >
             {type}

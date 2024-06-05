@@ -99,7 +99,7 @@ function EventsList() {
         <Row className="justify-content-center">
           {filteredEvents.map((event) => (
             <Col key={event.id} className="mb-3">
-              <Card className='card-display-container' border="primary" style={{ width: 'mw-automatic' }}>
+              <Card className='card-display-container' style={{ width: 'mw-automatic' }}>
                 <Card.Body>
                   <Card.Title>{event.eventName}</Card.Title>
                   <Card.Text>Location: {event.location}</Card.Text>

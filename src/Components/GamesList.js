@@ -34,7 +34,7 @@ function GamesList() {
 
     return (
         <>
-            <Container className='justify-content-center'>
+            <Container className='justify-content-center readable-container'>
                 <h3>Currently Supported Games</h3>
                 <FilterGameByType games = {games} onFilteredGames={handleFilteredGames}/>
                 <FilterGameByMaxPlayers games = {games} onFilteredGames= {handleFilteredGames}/>

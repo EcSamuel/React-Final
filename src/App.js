@@ -5,14 +5,7 @@ import './App.css';
 import LayoutWrapper from './Components/LayoutWrapper';
 import ShowHomePage from './Components/Pages/HomePage';
 import GameList from './Components/Pages/Games';
-import GameDropdown from './Components/GameDropdown';
-import AddGame from './Components/AddGame';
 import Events from './Components/Pages/Events';
-import CreateEvent from './Components/Events/CreateEvent';
-import EventsList from './Components/Events/EventsList';
-import FilterEventByGame from './Components/Events/FilterEventByGame';
-import FilterEventByDate from './Components/Events/FilterEventByDate';
-import ShowLocalEvents from './Components/Events/ShowLocalEvents';
 import Footer from './Footer';
 
 function App() {
@@ -59,7 +52,7 @@ function HomePage() {
     <LayoutWrapper>
       <Container className='centered-wrapper'>
         <Container className='centered-content'>
-          <ShowHomePage />
+          <ShowHomePage/>
         </Container>
       </Container>
     </LayoutWrapper>
@@ -70,7 +63,7 @@ function EventsPage({ events }) {
   return (
     <LayoutWrapper>
       <div className='text-center'>
-        <h2 className='readable-container'>Events</h2>
+        <h1 className='readable-container'>Events</h1>
         <Events/>
       </div>
     </LayoutWrapper>
@@ -81,7 +74,7 @@ function Games({ games }) {
   return (
     <LayoutWrapper>
       <div className='text-center'>
-        <h2 className=''>Games</h2>
+        <h1 className=''>Games</h1>
         <GameList />
       </div>
     </LayoutWrapper>
