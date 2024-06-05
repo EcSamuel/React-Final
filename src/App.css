@@ -56,7 +56,7 @@ nav {
 
 h1, h2, h3, h4, h5, h6, p, span, div {
   text-shadow: 2px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family:Arial, Helvetica, sans-serif
 }
 
 .readable-container {
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 .tavern-btn-submit {
-  background-color: yellowgreen;
+  background-color: #C46A01;
   border-color: #B87333;
 }
 
@@ -169,6 +169,20 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 #dropdown-end-date {
   background-color:purple;
   border-color: #B87333;
+}
+
+#min-players-filter {
+  background-color:purple;
+  border-color: #B87333;
+}
+
+#max-players-filter {
+  background-color:purple;
+  border-color: #B87333;
+}
+
+.Button:hover {
+  background-color: #FED353 !important;
 }
 
 /* colors

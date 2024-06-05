@@ -4,6 +4,7 @@ import axios from 'axios';
 import { grabGames } from './Events/API';
 import '../App.css'
 import FilterGameByType from './FilterGameByType';
+import FilterGameByMaxPlayers from './FilterGameByMaxPlayers';
 // this is how and where I am mapping out the games to the DOM
 function GamesList() {
     const gameURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Game`;
@@ -33,8 +34,10 @@ function GamesList() {
 
     return (
         <>
-            <Container className='d-flex justify-content-center'>
+            <Container className='justify-content-center'>
+                <h3>Currently Supported Games</h3>
                 <FilterGameByType games = {games} onFilteredGames={handleFilteredGames}/>
+                <FilterGameByMaxPlayers games = {games} onFilteredGames= {handleFilteredGames}/>
             </Container>
             <Container className=''>
                 <Row className='justify-content-center'>

@@ -70,7 +70,7 @@ function EventsPage({ events }) {
   return (
     <LayoutWrapper>
       <div className='text-center'>
-        <h2>Events</h2>
+        <h2 className='readable-container'>Events</h2>
         <Events/>
       </div>
     </LayoutWrapper>
