@@ -10,6 +10,8 @@ import Events from './Components/Pages/Events';
 import LoginForm from './Components/Login/LoginForm';
 import NavBanner from './NavBanner';
 import Footer from './Footer';
+import NotFound from './404';
+import CreateAccount from './Components/Login/CreateNewUser';
 
 export function HomePage() {
   return (
@@ -38,7 +40,6 @@ export function GamesPage() {
   return (
     <LayoutWrapper>
       <div className='text-center'>
-        <h1 className=''>Games</h1>
         <GameList />
       </div>
     </LayoutWrapper>
@@ -49,7 +50,6 @@ function Login() {
   return (
     <LayoutWrapper>
       <Container className='text-center'>
-        <h1>To access Rule Zer0's most powerful features, please log in below</h1>
         <LoginForm />
       </Container>
     </LayoutWrapper>
@@ -65,8 +65,10 @@ function App() {
         <Route path="/events" element={<EventsPage />} />
         <Route path="/games" element={<GamesPage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<CreateAccount />} />
+        <Route path="*" element={<NotFound />} /> {/* 404 route */}
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

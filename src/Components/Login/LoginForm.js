@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Container, Form, Button } from 'react-bootstrap';
+import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -27,31 +27,42 @@ const LoginForm = () => {
   };
 
   return (
-    <Container>
-      <h2>Login</h2>
-      {error && <p>{error}</p>}
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formUsername">
-          <Form.Label>Username:</Form.Label>
-          <Form.Control
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group controlId="formPassword">
-          <Form.Label>Password:</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Login
-        </Button>
-      </Form>
+    <>
+    <Container className="d-flex justify-content-center align-items-center login-container">
+      <Row className="w-100 justify-content-center">
+        <Col xs={12} md={6} lg={4}>
+          <h2 className="text-center">To Access Rule Zer0's most powerful features, please log in below!</h2>
+          {error && <p className="text-danger text-center">{error}</p>}
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formUsername">
+              <Form.Label>Username:</Form.Label>
+              <Form.Control
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group controlId="formPassword">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="w-100">
+              Login
+            </Button>
+          </Form>
+        </Col>
+      </Row>
     </Container>
+    <Container>
+      <h3>Don't have an account yet? Create One <a href='/signup'>here</a></h3>
+    </Container>
+    </>
   );
 };
 

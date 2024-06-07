@@ -1,29 +1,32 @@
+/* Navigation Bar Styles */
 nav {
-    background-color: #61380B;
-    color: #ffffff;
-    padding: 10px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin-right: 10px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-  }
+  background-color: #355E3B;
+  color: #ffffff;
+  padding: 10px;
+}
 
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Main Content Styles */
 .main-content {
   margin-top: 56px; /* Adjust the value based on the height of your NavBar */
 }
 
+/* Background Image Styles */
 .background-image-container {
   background-size: cover;
   background-position: center;
@@ -38,7 +41,7 @@ nav {
 
 .background-image-wrapper {
   overflow: hidden;
-  height: 100%
+  height: 100%;
 }
 
 .background-image-wrapper img {
@@ -47,27 +50,27 @@ nav {
   object-fit: cover;
 }
 
-/* Media queries for responsive behavior */
+/* Media Queries for Responsive Behavior */
 @media (max-width: 767px) {
   .background-image-container {
     grid-template-columns: 1fr;
   }
 }
 
+/* Typography and Text Styles */
 h1, h2, h3, h4, h5, h6, p, span, div {
   text-shadow: 2px;
-  font-family:Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .readable-container {
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
-  padding-bottom: 3%;
-  padding-top:3%
+  padding: 2% 0;
 }
 
 .card-display-container {
-  background-color: #E6D2B9, 0.6;
+  background-color: rgba(230, 210, 185, 0.6);
   border-radius: 20px;
 }
 
@@ -76,12 +79,13 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   fill: white;
 }
 
+/* Footer Styles */
 .fixed-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 7%;
-  background-color: #61380B;
+  background-color: #355E3B;
   padding: 10px 20px;
   text-align: center;
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
@@ -93,19 +97,21 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 .fixed-footer h3 {
   margin: 0;
   font-size: 1.2rem;
-  color:#ffffff
+  color: #ffffff;
 }
 
 .fixed-footer p {
   margin: 0;
   font-size: 0.9rem;
-  color: #ffffff
+  color: #ffffff;
 }
 
+/* Labels */
 .readable-labels {
   font-weight: 600;
 }
 
+/* Centered Content Wrapper */
 .centered-wrapper {
   display: flex;
   justify-content: center;
@@ -113,16 +119,16 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   height: 80vh; /* set height to full viewport height */
 }
 
-/* Since React v6 */
+/* Centered Content Color Inheritance */
 .centered-wrapper .centered-content {
   color: inherit; 
 }
 
-/* React v5 and older */
 .centered-wrapper .centered-content .color-inherit {
   color: inherit;
 }
 
+/* Button Styles */
 .tavern-btn {
   background-color: #A67C52;
   border-color: #B87333;
@@ -141,7 +147,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 .tavern-btn-filter {
   color: #f7bd34;
   border-color: #B87333;
-  background-color: #8B5A2B;
+  background-color: #355E3B;
   font-weight: 500;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -152,42 +158,19 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 .tavern-btn-submit {
-  background-color: #C46A01;
+  background-color: #FFA500;
   border-color: #B87333;
 }
 
-#dropdown-basic-button {
-  background-color: #8B5A2B;
-  border-color: #B87333;
-  color:#f7bd34;
-}
-
-#dropdown-start-date {
-  background-color: #8B5A2B;
-  border-color: #B87333;
-  color:#f7bd34;
-}
-
-#dropdown-end-date {
-  background-color: #8B5A2B;
-  border-color: #B87333;
-  color:#f7bd34;
-}
-
-#min-players-filter {
-  background-color: #8B5A2B;
-  border-color: #B87333;
-  color:#f7bd34;
-}
-
+/* Dropdown Menu Styles */
+#dropdown-basic-button,
+#dropdown-start-date,
+#dropdown-end-date,
+#min-players-filter,
 #max-players-filter {
-  background-color: #8B5A2B;
+  background-color: #355E3B;
   border-color: #B87333;
-  color:#f7bd34;
-}
-
-.Button:hover {
-  background-color: #FED353 !important;
+  color: #f7bd34;
 }
 
 .dropdown-menu-container {
@@ -202,22 +185,45 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   list-style: none;
 }
 
-/* colors
-  Main Colors:
+/* Example CSS */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 
-#61380B (Rich Sienna Brown)
-#A67C52 (Camel Brown)
-#8B5A2B (Saddle Brown)
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-Accent Colors:
+nav ul li {
+  margin-right: 10px;
+}
 
-#C79B6A (Tan)
-#D2B48C (Pale Goldenrod)
-#B87333 (Copper)
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
 
-Other Elements:
+nav ul li button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
 
-#292518 (Charcoal Brown) - for text or accent elements
-#E6D2B9 (Tan Hide) - for backgrounds or textured elements
-#A0633B (Burnt Sienna) - for accents or call-to-action elements
-*/
+nav ul li button:hover {
+  text-decoration: underline;
+}
+
+.login-container .col {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
