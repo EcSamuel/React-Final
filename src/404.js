@@ -5,7 +5,7 @@ import './notfound.css';
 
 const NotFound = () => {
   return (
-    <div className="not-found-bg">
+    <div className="not-found-bg no-scroll">
       <Container className="not-found-container">
         <Row>
           <Col>

@@ -46,7 +46,7 @@ export function GamesPage() {
   );
 }
 
-function Login() {
+export function Login() {
   return (
     <LayoutWrapper>
       <Container className='text-center'>

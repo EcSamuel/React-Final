@@ -1,23 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden; /* Prevent scrollbars */
+.no-scroll {
+  overflow: hidden;
 }
 
 .not-found-bg {
   background-image: url('https://static.vecteezy.com/system/resources/previews/012/118/308/original/natural-1-d20-dice-roll-illustration-free-vector.jpg');
-  background-size: auto 100%; /* Adjust to fit height */
+  background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Use viewport height */
+  height: 80vh; /* Use viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   text-align: center;
+  overflow: hidden;
 }
 
 .not-found-container {
@@ -26,6 +24,7 @@ body, html {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 80%;
+  overflow: hidden;
 }
 
 h1 {
