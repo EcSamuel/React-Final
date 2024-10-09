@@ -2,17 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { Dropdown, DropdownButton, Container } from 'react-bootstrap';
 import axios from 'axios';
 
+/**
+ * Component to filter events by date range using two dropdowns.
+ * 
+ * @param {Function} onFilterEvents - Callback function to filter the events, passed as a prop.
+ */
 const FilterByDate = ({ onFilterEvents }) => {
+  // URL for fetching the events data
   const eventURL = `https://664a82eaa300e8795d4227ab.mockapi.io/Event`;
+   // State variables to store the list of unique dates, selected start date, and end date
   const [dates, setDates] = useState([]);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
 
+  // useEffect hook runs once after component mounts to fetch the event data
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const response = await axios.get(eventURL);
-        const events = response.data;
+        const events = response.data; // Extracts event data from the API response
+        // Extracts unique dates from the events and stores them in the `dates` state variable
         const uniqueDates = Array.from(new Set(events.map((event) => event.date)));
         setDates(uniqueDates);
       } catch (error) {
@@ -21,7 +30,15 @@ const FilterByDate = ({ onFilterEvents }) => {
     };
 
     fetchEvents();
-  }, []);
+  }, []); // Empty dependency array means this effect runs only once after the initial render
+
+  /**
+   * Handles the selection of dates from the dropdowns.
+   * Updates the selected start or end date depending on the dropdown type (start/end).
+   * 
+   * @param {String} eventKey - The selected date from the dropdown.
+   * @param {String} type - Specifies if it's the 'start' or 'end' dropdown.
+   */
 
   const handleSelectDate = (eventKey, type) => {
     if (type === 'start') {
