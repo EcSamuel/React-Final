@@ -5,6 +5,7 @@ import './notfound.css';
 
 const NotFound = () => {
   return (
+    /* Providing class tags to apply a custom non-scrolling window for the 404 page */
     <div className="not-found-bg no-scroll">
       <Container className="not-found-container">
         <Row>
