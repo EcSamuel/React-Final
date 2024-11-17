@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
-// I wanted an array of imageURL's that allowed for a dynamic background for the website. 
 const BackgroundImages = () => {
   const imageUrls = [
     'https://www.tightpoker.com/app/uploads/2023/01/Ultimate-Texas-Holdem-2-scaled-1.jpg',
